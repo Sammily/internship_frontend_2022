@@ -1,0 +1,7 @@
+import React from 'react';
+
+function Main() {
+  return <div className="main">MAIN PAGE</div>;
+}
+
+export default Main;
