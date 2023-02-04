@@ -6,9 +6,6 @@ import { CurrentNewsContext } from 'app/App';
 function Main() {
   return (
     <>
-      <nav>
-        <Link to="/news">To News</Link>
-      </nav>
       <div className="main">MAIN PAGE</div>
       <News />
     </>

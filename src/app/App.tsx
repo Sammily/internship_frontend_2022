@@ -33,7 +33,7 @@ function App() {
     newStories = await getNewStories();
     console.log(newStories);
     setApiData(newStories);
-    for (let i = 0; i < 10; i += 1) {
+    for (let i = 0; i < 50; i += 1) {
       await handleGetStory(newStories[i]);
     }
     console.log(allDataTop100);
