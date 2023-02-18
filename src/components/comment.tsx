@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import ChildComment from './childComment';
 
 function Comment({
   by,
@@ -15,11 +16,22 @@ function Comment({
   time: number;
   text: string;
 }) {
+  const [viewChildComments, setviewChildComments] = useState(false);
   return (
     <>
-      <div>By: {by}</div>
+      <div>
+        <b>By: {by}</b>
+      </div>
       <div>Kids Comment: {Array.isArray(kids) ? kids.length : 0}</div>
       <div>{text}</div>
+      <button
+        onClick={() => {
+          setviewChildComments(!viewChildComments);
+        }}
+      >
+        Get kids comments
+      </button>
+      <div>{viewChildComments ? <ChildComment kids={kids} /> : <div>No Child</div>}</div>
     </>
   );
 }

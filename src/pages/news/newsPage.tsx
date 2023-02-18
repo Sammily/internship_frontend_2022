@@ -2,19 +2,15 @@ import { CurrentNewsContext } from 'app/App';
 import { getStory } from 'app/fetch';
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { CommentsType, State, StateAll } from 'utils/types';
+import { CommentsType, StateAll } from 'utils/types';
 import Comment from 'components/comment';
 import { useSelector } from 'react-redux';
 
 function NewsPage() {
-  const { currentNews, setCurrentNews } = useContext(CurrentNewsContext);
-  //redux
-  const newsIdsConst = useSelector((state: State) => state.newsIds.newsIds);
-  console.log(newsIdsConst);
+  const { currentNews } = useContext(CurrentNewsContext);
   const newsIdsAllDataConst = useSelector((state: StateAll) => state.newsIdsAllData.newsIdsAllData);
-  console.log('newsIdsAllDataConst', newsIdsAllDataConst);
-
   const current = newsIdsAllDataConst.filter((item) => item.id === currentNews);
+  console.log(current);
   const dt = new Date(current[0].time * 1000).toLocaleString();
   const comments = current[0].kids;
   console.log(comments);
@@ -27,7 +23,6 @@ function NewsPage() {
         arrayOfComments.push(await getStory(comments[i]));
       }
     }
-    console.log(arrayOfComments);
     setCommentsData(arrayOfComments);
   }
 

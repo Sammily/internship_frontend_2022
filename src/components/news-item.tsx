@@ -33,6 +33,9 @@ function NewsItem({
         <h5>By: {by}</h5>
         <h5>Time: {dt}</h5>
         <h5>ID: {id}</h5>
+        <h5>
+          <b>kids: {Array.isArray(kids) ? kids.length : 0}</b>
+        </h5>
         <Link to="/news">
           <button
             onClick={() => {

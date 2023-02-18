@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   newsIdsAllData: [
     {
-      by: '',
+      by: 'initialValue',
       descendants: 0,
       id: 0,
       kids: [0],
@@ -21,8 +21,6 @@ export const newsIdsAllDataSlice = createSlice({
   initialState,
   reducers: {
     newsIdsAllData: (state, action) => {
-      console.log(state);
-      console.log(action);
       state.newsIdsAllData = action.payload;
     },
   },
