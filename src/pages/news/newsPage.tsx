@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { CommentsType, StateAll } from 'utils/types';
 import Comment from 'components/comment';
 import { useSelector } from 'react-redux';
+import styles from './newsPage.module.css';
 
 function NewsPage() {
   const { currentNews } = useContext(CurrentNewsContext);
@@ -33,7 +34,7 @@ function NewsPage() {
   return (
     <>
       <Link to="/">To Main</Link>
-      <div className="news">NEWS PAGE</div>
+      <div className={styles.news}>NEWS PAGE</div>
       <div>ID: {currentNews}</div>
       <h5>url: {current[0].url}</h5>
       <h5>title: {current[0].title}</h5>

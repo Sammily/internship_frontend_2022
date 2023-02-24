@@ -1,6 +1,7 @@
 import { CurrentNewsContext } from 'app/App';
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './news.module.css';
 
 function NewsItem({
   by,
@@ -27,17 +28,17 @@ function NewsItem({
   const { currentNews, setCurrentNews } = useContext(CurrentNewsContext);
   return (
     <>
-      <div>
-        <h5>Title: {title}</h5>
-        <h5>Score: {score}</h5>
-        <h5>By: {by}</h5>
-        <h5>Time: {dt}</h5>
-        <h5>ID: {id}</h5>
-        <h5>
+      <div className={styles.news}>
+        <p className={styles.title}>{title}</p>
+        <span className={styles.details}>By: {by}</span>
+        <span className={styles.details}>Date: {dt}</span>
+        <span className={styles.details}>Score: {score}</span>
+        <div>
           <b>kids: {Array.isArray(kids) ? kids.length : 0}</b>
-        </h5>
+        </div>
         <Link to="/news">
           <button
+            className={styles.button}
             onClick={() => {
               setCurrentNews(id);
             }}

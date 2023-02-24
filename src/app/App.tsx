@@ -31,7 +31,7 @@ function App() {
 
   const handleGet = async () => {
     newStories = await getNewStories();
-    for (let i = 0; i < 100; i += 1) {
+    for (let i = 0; i < 5; i += 1) {
       await handleGetStory(newStories[i]);
     }
     dispatchRedux(getNewsIds(newStories));
