@@ -2,4 +2,43 @@
   background-color: #F9F7F7;
   color: #112D4E;
   /*light #F9F7F7 blue #3F72AF light blue #DBE2EF dark #112D4E*/
+  margin: 10px;
+  padding: 5px;
+}
+
+.button {
+  background-color: #3F72AF;
+  padding: 10px;
+  border: 1px #3F72AF;
+  border-radius: 5px;
+  color: #F9F7F7;
+  margin: 5px;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 3px #112D4E;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.link {
+  text-decoration: none;
+  color: #F9F7F7;
+  font-size: medium;
+}
+
+.title {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.details {
+  margin-right: 15px;
+}
+
+.header {
+  background-color: #DBE2EF;
+  color: #112D4E;
+  font-size: 72px;
+  text-align: center;
 }

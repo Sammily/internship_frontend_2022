@@ -33,25 +33,31 @@ function NewsPage() {
 
   return (
     <>
-      <Link to="/">To Main</Link>
-      <div className={styles.news}>NEWS PAGE</div>
-      <div>ID: {currentNews}</div>
-      <h5>url: {current[0].url}</h5>
-      <h5>title: {current[0].title}</h5>
-      <h5>data: {dt}</h5>
-      <h5>author: {current[0].by}</h5>
-      <h5>comments count: {Array.isArray(comments) ? comments.length : 0}</h5>
-      {commentsData.map((item) => (
-        <Comment
-          key={item.id.toString()}
-          id={item.id}
-          by={item.by}
-          kids={item.kids}
-          parent={item.parent}
-          time={item.time}
-          text={item.text}
-        />
-      ))}
+      <button className={styles.button}>
+        <Link to="/" className={styles.link}>
+          To Main
+        </Link>
+      </button>
+      <div className={styles.header}>NEWS PAGE</div>
+      <div className={styles.news}>
+        <p>ID: {currentNews}</p>
+        <p className={styles.title}>title: {current[0].title}</p>
+        <p>url: {current[0].url}</p>
+        <span className={styles.details}>data: {dt}</span>
+        <span className={styles.details}>author: {current[0].by}</span>
+        <h5>comments count: {Array.isArray(comments) ? comments.length : 0}</h5>
+        {commentsData.map((item) => (
+          <Comment
+            key={item.id.toString()}
+            id={item.id}
+            by={item.by}
+            kids={item.kids}
+            parent={item.parent}
+            time={item.time}
+            text={item.text}
+          />
+        ))}
+      </div>
     </>
   );
 }
